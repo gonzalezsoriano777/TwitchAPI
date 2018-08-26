@@ -1,12 +1,95 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <title>Twitch API</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet"> 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  
 <style>
+
+body {
+    font-family: 'Bubblegum Sans', cursive;
+}
     
+#all {
+    background-color: #4b367c;
+    margin-left: 20px;
+}
+
+#online {
+    background-color: #4b367c;
+     margin-left: 20px;
+}
+
+#offline {
+    background-color: #4b367c;
+     margin-left: 20px;
+}
 
 
 
+
+.text-center:hover {
+     color: purple;
+ }
+
+.res {
+  padding: 10px 585px;
+  border: 8px solid;
+  border-color: #dcdde1;
+  border-radius: 10px;
+  background-color: #dff9fb;
+  color: rgba(241, 255, 255, 0.9); 
+    
+}
+
+
+.res .row:hover {
+  background: #ffa9a0;
+  color: #f5f6fa;
+  border-color: #f5f6fa; 
+    
+}
+
+.res .row:hover img {
+  border-color: #f5f6fa;
+    
+}
+
+.res .row {
+  margin: 10px 0px;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 5px; }
+
+.logo img {
+  height: 50px;
+  width: 50px;
+  border: 1px solid lightgray; 
+    
+}
+
+.name {
+  margin-left: 20px; }
+
+#statusdescription {
+  padding: 100px;
+  margin-left: 200px;
+  color: black;
+    
+}
+
+.game {
+    margin-right: 500px;
+}
 
 
 
@@ -14,27 +97,39 @@
 </style>
 </head>
 <body>
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ <div class="container">
+    <h1 class="text-center" style="font-size: 50px; margin-left: 50px;"><u>Twitch.TV</u><i class="fa fa-twitch"></i></h1>
+    <h1 class="text-center" style="font-size: 30px; margin-left: 50px;">Watch Streamers All Around The World</h1>
+    <h2 class="text-center" style="font-size: 25px;">By Hector Gonzalez</h2>
+    <div class="row">
+      <div class="btn-group btn-group-justified">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="all">All of your Streamers!</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="online">Whos Online?</button>
+        </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary" id="offline">Whos Offline?</button>
+        </div>
+      </div>
+    </div>
+    <div class="res">
+    </div>
+  </div>
+  <div class='row' id='"+status+"' >
+  <div class='col-md-3 col-xs-4'>
+    <span class='logo'><img class='img img-circle' src='"+logo+"' style="margin-left: 200px;"></span>
+    <a href='"+channel_link+"'>
+      <span class='name text-center' ></span>
+    </a>
+  </div>
+  <div class='col-md-9 col-xs-8 text-center'  id='statusdescription'>
+    <span class='game'></span>
+    <span class='status' ></span>
+  </div>
+</div>
+  <script src="script.js"></script>    
     
 </body>
 </html>
