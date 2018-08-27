@@ -2,15 +2,15 @@ var streamapi="https://wind-bow.glitch.me/twitch-api/streams/";
 var channelapi="https://wind-bow.glitch.me/twitch-api/channels/";
 var channels=["freecodecamp", "gamingprodigy", "ESL_SC2"];
 
-function allStreamCall(streamchannel){ // it will call twitch APIs to get both streaming and channel information about that  specific channel.
+function allStreamers(streamchannel){ // it will call twitch APIs to get both streaming and channel information about that  specific channel.
 	var logo,name,game,status,statusdesc,channel_link;
 
 	var streamchannel_url=streamapi+streamchannel+"?callback=?";
 	var channel_url=channelapi+streamchannel+"?callback=?";
 
-  /**
-   * call streaming channels API to see if it is streaming or not and if it is then it'll display who's streaming 
-   */
+  
+   // call streaming channels API to see if it is streaming or not and if it is then it'll display who's streaming 
+   
 	$.getJSON(streamchannel_url,function(data){
 		if(data.status=='404'){ /* number used when something is unidentified or not found */
 			game=data.message;
@@ -85,7 +85,7 @@ $(document).ready(function(){
    // Calling the allStreamCall function on each and every channel
    
 	channels.forEach(function(channel){
-		allStreamCall(channel);
+		allStreamers(channel);
 	});
 
     // Once clicking on the "All of your Streamers!" button it shows all the streamers you picked or have
