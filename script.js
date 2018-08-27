@@ -1,6 +1,6 @@
 var streamapi="https://wind-bow.glitch.me/twitch-api/streams/";
 var channelapi="https://wind-bow.glitch.me/twitch-api/channels/";
-var channels=["freecodecamp", "GamingProdigy", "ESL_SC2"];
+var channels=["freecodecamp", "gamingprodigy", "ESL_SC2"];
 
 function allStreamCall(streamchannel){ // it will call twitch APIs to get both streaming and channel information about that  specific channel.
 	var logo,name,game,status,statusdesc,channel_link;
@@ -48,16 +48,16 @@ function allStreamCall(streamchannel){ // it will call twitch APIs to get both s
     		channel_link="#";
     		logo="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png";
     	}
-    	else if(data.status=='422'){ /* if channel unavailable or closed their account */
+    	else if(data.status=='422'){ //if the streamers channel isn't available or their accounts closed 
     		name=streamchannel;
     		channel_link="#";
     		logo="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png";
     	}
-    	else if(logo===null){ /* if channel does not have a logo then show the following logo */
+    	else if(logo===null){ // If the channel doesn't have logo then it will display a logo by default 
        logo="https://openclipart.org/image/2400px/svg_to_png/211821/matt-icons_preferences-desktop-personal.png";
 			}
 
-      /* prepare a row for the result in html */
+      // prepare a row for the result in html 
 			var result="\
 			<div class='row' id='"+status+"'>\
 				<div class='col-md-3 col-xs-4'>\
@@ -81,16 +81,15 @@ function allStreamCall(streamchannel){ // it will call twitch APIs to get both s
 };
 
 $(document).ready(function(){
-  /**
-   * Calling allStreamCall function on every channel
-   */
+  
+   // Calling the allStreamCall function on each and every channel
+   
 	channels.forEach(function(channel){
 		allStreamCall(channel);
 	});
 
-  /**
-   * Show all channels when clicked on All button
-   */
+    // Once clicking on the "All of your Streamers!" button it shows all the streamers you picked or have
+   
   $('#all').click(function(){
   	var all=$('.res .row');
   	all.each(function(index){
@@ -98,9 +97,9 @@ $(document).ready(function(){
   	});
   });
 
-  /**
-   * Show Only online streaming channels and hide the offline ones.
-   */
+  
+  // Displays only the online streaming channels and hides the streamers who are offline (using the toggle and calling the Id's for both online and offline)
+   
   $('#online').click(function(){
   	var online=$('.res .row');
   	online.each(function(index){
@@ -114,9 +113,9 @@ $(document).ready(function(){
   	});
   });
 
-  /**
-   * Show Only offline channels
-   */
+  
+  //   Once clicking on the "Who's Offline?" button it acceses the users who are offline
+   
   $('#offline').click(function(){
   	var offline=$('.res .row');
   	offline.each(function(index){

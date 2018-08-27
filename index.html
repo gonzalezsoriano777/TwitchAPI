@@ -17,6 +17,7 @@
 
 body {
     font-family: 'Bubblegum Sans', cursive;
+    background-color: #f5f6fa;
 }
     
 #all {
@@ -47,7 +48,7 @@ body {
   border-color: #dcdde1;
   border-radius: 10px;
   background-color: #dff9fb;
-  color: rgba(241, 255, 255, 0.9); 
+  color: rgba(241, 255, 255, 0.9);
     
 }
 
@@ -65,32 +66,42 @@ body {
 }
 
 .res .row {
-  margin: 10px 0px;
+  margin: 10px 20px;
   padding: 10px;
   border: 1px solid;
-  border-radius: 5px; }
+  border-radius: 5px;
+    
+}
 
 .logo img {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
   border: 1px solid lightgray; 
-    
+      
 }
 
 .name {
   margin-left: 20px; }
 
 #statusdescription {
-  padding: 100px;
-  margin-left: 200px;
+  padding: 65px;
+  padding-right: 200px;
+  margin-right: 50px;
   color: black;
     
 }
 
 .game {
-    margin-right: 500px;
+    font-family: monospace;
+    font-size: 15px;
 }
 
+.status {
+   text-align: center;
+   font-size: 15px;
+   font-family: monospace;
+   margin-right: 45px;
+}
 
 
 
@@ -98,8 +109,8 @@ body {
 </head>
 <body>
  <div class="container">
-    <h1 class="text-center" style="font-size: 50px; margin-left: 50px;"><u>Twitch.TV</u><i class="fa fa-twitch"></i></h1>
-    <h1 class="text-center" style="font-size: 30px; margin-left: 50px;">Watch Streamers All Around The World</h1>
+    <h1 class="text-center" style="font-size: 50px; margin-left: 50px;"><u>Twitch.TV</u>    <i class="fa fa-twitch"></i></h1>
+    <h1 class="text-center" style="font-size: 30px; margin-left: 50px;">Watch Streamers All Around The World!</h1>
     <h2 class="text-center" style="font-size: 25px;">By Hector Gonzalez</h2>
     <div class="row">
       <div class="btn-group btn-group-justified">
@@ -119,14 +130,14 @@ body {
   </div>
   <div class='row' id='"+status+"' >
   <div class='col-md-3 col-xs-4'>
-    <span class='logo'><img class='img img-circle' src='"+logo+"' style="margin-left: 200px;"></span>
+    <span class='logo'><img class='img img-circle' src='"+logo+"'></span>
     <a href='"+channel_link+"'>
       <span class='name text-center' ></span>
     </a>
   </div>
   <div class='col-md-9 col-xs-8 text-center'  id='statusdescription'>
     <span class='game'></span>
-    <span class='status' ></span>
+    <span class='status'></span>
   </div>
 </div>
   <script src="script.js"></script>    
